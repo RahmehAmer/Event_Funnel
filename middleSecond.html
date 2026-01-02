@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Online Workshop Funnel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- FAQ Page -->
+    <section id="faq" class="page active">
+        <header class="site-header">
+            <div class="header-container">
+                <div class="logo-section">
+                    <a href="#" onclick="navigateToPage('awareness')" class="logo-link">
+                        <img src="Logo.jpg" alt="Logo" class="logo">
+                    </a>
+                </div>
+                <nav class="main-navigation">
+                    <ul class="nav-list">
+                        <li><a href="#" class="nav-link">Workshops</a></li>
+                        <li><a href="#" class="nav-link">Teachers</a></li>
+                        <li><a href="#" class="nav-link">Blog</a></li>
+                    </ul>
+                </nav>
+                <div class="register-section">
+                    <button class="register-button" onclick="navigateToPage('awareness')">Register now</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="faq-hero">
+                <div class="faq-container">
+                    <h3 class="faq-subtitle">Got questions? We have got Answers!</h3>
+                    <h2 class="faq-title">FAQs</h2>
+
+                    <div class="faq-accordion">
+                        <div class="faq-card">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span class="question-text">What is the workshop format?</span>
+                                <span class="toggle-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>This is a live online workshop conducted via Zoom. You'll participate in real-time with the instructor and other attendees, including interactive exercises and Q&A sessions.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-card">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span class="question-text">Do I need any prior experience?</span>
+                                <span class="toggle-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>No prior experience is required! This workshop is designed for beginners who want to build their personal brand from scratch. We'll cover everything from the basics to advanced strategies.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-card">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span class="question-text">What do I get after the workshop?</span>
+                                <span class="toggle-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>You'll receive lifetime access to the workshop recordings, downloadable resources, templates, checklists, and a certificate of completion. Plus, you'll be part of our exclusive alumni community.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="reviews-section">
+                <div class="reviews-container">
+                    <h2 class="reviews-title">Reviews</h2>
+                    <div class="reviews-grid">
+                        <div class="review-card">
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <p class="review-text">"This workshop completely transformed my approach to personal branding. The instructor was amazing and the practical exercises were incredibly helpful."</p>
+                            <div class="review-author">
+                                <strong>Sarah M.</strong>
+                                <span>Marketing Professional</span>
+                            </div>
+                        </div>
+
+                        <div class="review-card">
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <p class="review-text">"As someone starting from zero, this workshop gave me clear, actionable steps to build my personal brand. Highly recommend for beginners!"</p>
+                            <div class="review-author">
+                                <strong>David L.</strong>
+                                <span>Entrepreneur</span>
+                            </div>
+                        </div>
+
+                        <div class="review-card">
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <p class="review-text">"The best investment I've made in my career. The strategies I learned have helped me attract more opportunities and grow my network significantly."</p>
+                            <div class="review-author">
+                                <strong>Emily R.</strong>
+                                <span>Content Creator</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reviews-cta">
+                        <button class="reviews-button" onclick="navigateToPage('registration')">Secure your spot - 40$</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-container">
+                <img src="Logo.jpg" alt="Logo" class="footer-logo">
+                <a href="#" class="footer-link">Workshops</a>
+                <a href="#" class="footer-link">Blog</a>
+                <span class="footer-text">All rights reserved</span>
+            </div>
+        </footer>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

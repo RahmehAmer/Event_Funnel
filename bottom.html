@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration - Online Workshop Funnel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Registration Page -->
+    <section id="registration" class="page active">
+        <header class="site-header">
+            <div class="header-container">
+                <div class="logo-section">
+                    <a href="#" onclick="navigateToPage('awareness')" class="logo-link">
+                        <img src="Logo.jpg" alt="Logo" class="logo">
+                    </a>
+                </div>
+                <nav class="main-navigation">
+                    <ul class="nav-list">
+                        <li><a href="#" class="nav-link">Workshops</a></li>
+                        <li><a href="#" class="nav-link">Teachers</a></li>
+                        <li><a href="#" class="nav-link">Blog</a></li>
+                    </ul>
+                </nav>
+                <div class="register-section">
+                    <button class="register-button" onclick="navigateToPage('awareness')">Register now</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="registration-hero">
+                <div class="registration-container">
+                    <h2 class="registration-title">Complete Your Registration</h2>
+                    <p class="registration-subtitle">Secure your spot in the workshop for just $40</p>
+
+                    <form class="registration-form" onsubmit="handleRegistration(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName" class="form-label">First Name *</label>
+                                <input type="text" id="firstName" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName" class="form-label">Last Name *</label>
+                                <input type="text" id="lastName" class="form-input" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" id="email" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" id="phone" class="form-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="experience" class="form-label">Experience Level</label>
+                            <select id="experience" class="form-select">
+                                <option value="">Select your experience level</option>
+                                <option value="beginner">Beginner - Just starting out</option>
+                                <option value="intermediate">Intermediate - Some experience</option>
+                                <option value="advanced">Advanced - Looking to refine skills</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="goals" class="form-label">What are your main goals? *</label>
+                            <textarea id="goals" class="form-textarea" rows="4" placeholder="Tell us what you hope to achieve from this workshop..." required></textarea>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="terms" required>
+                                <span class="checkmark"></span>
+                                I agree to the terms and conditions and privacy policy
+                            </label>
+                        </div>
+
+                        <button type="submit" class="submit-button">Complete Registration - $40</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-container">
+                <img src="Logo.jpg" alt="Logo" class="footer-logo">
+                <a href="#" class="footer-link">Workshops</a>
+                <a href="#" class="footer-link">Blog</a>
+                <span class="footer-text">All rights reserved</span>
+            </div>
+        </footer>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
