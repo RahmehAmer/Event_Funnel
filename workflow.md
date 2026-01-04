@@ -86,12 +86,13 @@ middlefirst.html | Know the workshop details| clicks on second CTA "Join the wor
 
 > Add screenshots, photos, or links to your wireframes.
 
-- Page 1 wireframe: PPage 1.png
-- Page 2 wireframe: Page 2.png
-- Page 3 wireframe:Page 3.png
-- Page 4 wireframe:Page 4.png
-- Page 5 wireframe: Page 5.png
+## Page Wireframes
 
+- Page 1 wireframe: ![Page 1 wireframe](./Page%201.png)
+- Page 2 wireframe: ![Page 2 wireframe](./Page%202.png)
+- Page 3 wireframe: ![Page 3 wireframe](./Page%203.png)
+- Page 4 wireframe: ![Page 4 wireframe](./Page%204.png)
+- Page 5 wireframe: ![Page 5 wireframe](./Page%205.png)
 
 (You can sketch on paper and take photos.)
 
@@ -156,7 +157,7 @@ Why does this page exist? to show workshop reviews and faqs
 
 ---
 
-### 🔹 Page 4: Confirmation Page
+### 🔹 Page 5: Confirmation Page
 
 **Purpose of this page:**  confirm the registration
 
@@ -166,7 +167,7 @@ Why does this page exist? to show workshop reviews and faqs
 (e.g. registration completed, next steps)
 
 ---
-### 🔹 Page 5: Retention Page
+### 🔹 Page 6: Retention Page
 
 **Purpose of this page:**  
 

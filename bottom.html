@@ -13,7 +13,7 @@
             <div class="header-container">
                 <div class="logo-section">
                     <a href="#" onclick="navigateToPage('awareness')" class="logo-link">
-                        <img src="Logo.jpg" alt="Logo" class="logo">
+                        <img src="assets/Logo.jpg" alt="Logo" class="logo">
                     </a>
                 </div>
                 <nav class="main-navigation">
@@ -23,8 +23,14 @@
                         <li><a href="#" class="nav-link">Blog</a></li>
                     </ul>
                 </nav>
-                <div class="register-section">
-                    <button class="register-button" onclick="navigateToPage('awareness')">Register now</button>
+                <div class="breadcrumb-section">
+                    <nav class="breadcrumb">
+                        <a href="#" onclick="navigateToPage('awareness')" class="breadcrumb-link">Home</a>
+                        <span class="breadcrumb-separator">></span>
+                        <a href="#" onclick="navigateToPage('details')" class="breadcrumb-link">Workshop details</a>
+                        <span class="breadcrumb-separator">></span>
+                        <span class="breadcrumb-current">Registration</span>
+                    </nav>
                 </div>
             </div>
         </header>
@@ -32,55 +38,42 @@
         <main class="main-content">
             <section class="registration-hero">
                 <div class="registration-container">
-                    <h2 class="registration-title">Complete Your Registration</h2>
-                    <p class="registration-subtitle">Secure your spot in the workshop for just $40</p>
+                    <div class="hero-content">
+                        <h2 class="registration-title">
+                            <a href="#registration-form" class="register-link">Register</a> for: Build Your Personal Brand From ZERO Workshop
+                        </h2>
+                        <h2 class="registration-subtitle">
+                            Fill the form below to secure your spot and receive the workshop zoom link via email
+                        </h2>
+                    </div>
 
-                    <form class="registration-form" onsubmit="handleRegistration(event)">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="firstName" class="form-label">First Name *</label>
-                                <input type="text" id="firstName" class="form-input" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="lastName" class="form-label">Last Name *</label>
-                                <input type="text" id="lastName" class="form-input" required>
-                            </div>
+                    <form id="registration-form" class="registration-form" onsubmit="handleRegistration(event)">
+                        <div class="form-group">
+                            <label for="fullName" class="form-label">Full name</label>
+                            <input type="text" id="fullName" class="form-input" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="email" class="form-label">Email Address *</label>
+                            <label for="email" class="form-label">Email address</label>
                             <input type="email" id="email" class="form-input" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="phone" class="form-label">Phone Number</label>
-                            <input type="tel" id="phone" class="form-input">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="experience" class="form-label">Experience Level</label>
-                            <select id="experience" class="form-select">
-                                <option value="">Select your experience level</option>
-                                <option value="beginner">Beginner - Just starting out</option>
-                                <option value="intermediate">Intermediate - Some experience</option>
-                                <option value="advanced">Advanced - Looking to refine skills</option>
+                            <label for="status" class="form-label">Current status</label>
+                            <select id="status" class="form-select" required>
+                                <option value="">Select your current status</option>
+                                <option value="student">Student</option>
+                                <option value="freelancer">Freelancer</option>
+                                <option value="job_seeker">Job seeker</option>
                             </select>
                         </div>
 
-                        <div class="form-group">
-                            <label for="goals" class="form-label">What are your main goals? *</label>
-                            <textarea id="goals" class="form-textarea" rows="4" placeholder="Tell us what you hope to achieve from this workshop..." required></textarea>
-                        </div>
-
-                        <div class="form-group checkbox-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="terms" required>
-                                <span class="checkmark"></span>
-                                I agree to the terms and conditions and privacy policy
-                            </label>
-                        </div>
-
-                        <button type="submit" class="submit-button">Complete Registration - $40</button>
+                        <button type="submit" id="registerBtn" class="register-cta-button">
+                            <span class="button-text">Register now - 40$</span>
+                            <div class="loading-spinner" style="display: none;">
+                                <div class="spinner"></div>
+                            </div>
+                        </button>
                     </form>
                 </div>
             </section>
@@ -88,7 +81,7 @@
 
         <footer class="site-footer">
             <div class="footer-container">
-                <img src="Logo.jpg" alt="Logo" class="footer-logo">
+                <img src="assets/Logo.jpg" alt="Logo" class="footer-logo">
                 <a href="#" class="footer-link">Workshops</a>
                 <a href="#" class="footer-link">Blog</a>
                 <span class="footer-text">All rights reserved</span>
@@ -99,3 +92,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+

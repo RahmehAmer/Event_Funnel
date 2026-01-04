@@ -2,24 +2,42 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Function to navigate between pages
     window.navigateToPage = function(pageId) {
-        // Hide all pages
-        document.querySelectorAll('.page').forEach(page => {
-            page.classList.remove('active');
-        });
+        // Map page IDs to their respective HTML files
+        const pageMap = {
+            'awareness': 'index.html',
+            'details': 'middleFirst.html',
+            'faq': 'middleSecond.html',
+            'registration': 'bottom.html',
+            'confirmation': 'confirmation.html'
+        };
 
-        // Show target page
-        const targetPage = document.getElementById(pageId);
-        if (targetPage) {
-            targetPage.classList.add('active');
+        // Check if we need to navigate to a different HTML file
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
-            // Start countdown if navigating to details page
-            if (pageId === 'details') {
-                startCountdown();
+        if (pageMap[pageId] && pageMap[pageId] !== currentPage) {
+            // Navigate to different HTML file
+            window.location.href = pageMap[pageId];
+        } else {
+            // Navigate within same HTML file (fallback for single-page navigation)
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // Show target page
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+
+                // Start countdown if navigating to details page
+                if (pageId === 'details') {
+                    startCountdown();
+                }
             }
-        }
 
-        // Smooth scroll to top
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+            // Smooth scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
 
         console.log('Navigate to:', pageId);
     };
@@ -44,35 +62,52 @@ document.addEventListener('DOMContentLoaded', () => {
     window.handleRegistration = function(event) {
         event.preventDefault();
 
+        const button = document.getElementById('registerBtn');
+        const buttonText = button.querySelector('.button-text');
+        const spinner = button.querySelector('.loading-spinner');
+
+        // Show loading state
+        button.classList.add('loading');
+        buttonText.style.opacity = '0';
+        spinner.style.display = 'flex';
+
         // Get form data
         const formData = {
-            firstName: document.getElementById('firstName').value,
-            lastName: document.getElementById('lastName').value,
+            fullName: document.getElementById('fullName').value,
             email: document.getElementById('email').value,
-            phone: document.getElementById('phone').value,
-            experience: document.getElementById('experience').value,
-            goals: document.getElementById('goals').value,
-            terms: document.getElementById('terms').checked
+            status: document.getElementById('status').value
         };
 
         // Basic validation
-        if (!formData.firstName || !formData.lastName || !formData.email || !formData.goals || !formData.terms) {
-            alert('Please fill in all required fields and agree to the terms.');
+        if (!formData.fullName || !formData.email || !formData.status) {
+            // Hide loading state
+            button.classList.remove('loading');
+            buttonText.style.opacity = '1';
+            spinner.style.display = 'none';
+
+            alert('Please fill in all required fields.');
             return;
         }
 
         // Email validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(formData.email)) {
+            // Hide loading state
+            button.classList.remove('loading');
+            buttonText.style.opacity = '1';
+            spinner.style.display = 'none';
+
             alert('Please enter a valid email address.');
             return;
         }
 
-        // Simulate successful registration
-        console.log('Registration data:', formData);
+        // Simulate processing delay
+        setTimeout(() => {
+            console.log('Registration data:', formData);
 
-        // Navigate to confirmation page
-        navigateToPage('confirmation');
+            // Navigate to confirmation page
+            navigateToPage('confirmation');
+        }, 2000); // 2 second delay to show loading effect
     };
 
     // Countdown timer function
