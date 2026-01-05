@@ -167,6 +167,44 @@ body {
     font-weight: 500;
 }
 
+/* Scroll Arrows */
+.scroll-arrows {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.scroll-arrow {
+    width: 40px;
+    height: 40px;
+    background-color: #00d4aa;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 212, 170, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-arrow:hover {
+    background-color: #00b894;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 212, 170, 0.4);
+}
+
+.scroll-arrow:active {
+    transform: translateY(0);
+}
+
 /* Main Content */
 .main-content {
     flex: 1;
@@ -1568,5 +1606,16 @@ body {
 
     .confirmation-email-note {
         font-size: 0.95rem;
+    }
+
+    .scroll-arrows {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .scroll-arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
     }
 }

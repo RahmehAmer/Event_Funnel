@@ -195,4 +195,13 @@ document.addEventListener('DOMContentLoaded', () => {
     window.keepUpdated = function() {
         alert('Thank you! You\'ll now receive updates about upcoming workshops and personal branding tips.');
     };
+
+    // Scroll arrow functions
+    window.scrollToTop = function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    window.scrollToBottom = function() {
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    };
 });
