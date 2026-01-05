@@ -782,6 +782,94 @@ body {
     margin: 0 auto;
     padding: 0 20px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.confirmation-thank-you {
+    font-size: 3rem;
+    color: #000000;
+    font-weight: 600;
+    margin: 0;
+}
+
+.confirmation-message {
+    margin: 20px 0;
+}
+
+.confirmation-success {
+    font-size: 1.8rem;
+    color: #000000;
+    font-weight: 500;
+    line-height: 1.4;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.share-button {
+    background-color: #00d4aa;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 212, 170, 0.3);
+}
+
+.share-button:hover {
+    background-color: #00b894;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 212, 170, 0.4);
+}
+
+.email-check-button {
+    background-color: #00d4aa;
+    color: #ffffff;
+    border: none;
+    padding: 18px 40px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 212, 170, 0.3);
+    margin: 20px auto;
+    display: block;
+}
+
+.email-check-button:hover {
+    background-color: #00b894;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 212, 170, 0.4);
+}
+
+.update-section {
+    margin-top: 20px;
+}
+
+.update-button {
+    background-color: #f8f9fa;
+    color: #666;
+    border: 2px solid #e1e8ed;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.update-button:hover {
+    background-color: #e1e8ed;
+    border-color: #ccc;
+    transform: translateY(-1px);
 }
 
 .success-icon {
@@ -1490,47 +1578,30 @@ body {
     }
 
     .confirmation-hero {
-        padding: 120px 0 40px 0;
+        padding: 140px 0 60px 0;
     }
 
-    .confirmation-title {
-        font-size: 2rem;
+    .confirmation-thank-you {
+        font-size: 2.2rem;
     }
 
-    .confirmation-subtitle {
-        font-size: 1.2rem;
-        margin-bottom: 40px;
+    .confirmation-success {
+        font-size: 1.4rem;
+        gap: 25px;
     }
 
-    .checkmark-icon {
-        width: 80px;
-        height: 80px;
-        font-size: 40px;
+    .share-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
     }
 
-    .confirmation-details {
-        gap: 30px;
+    .email-check-button {
+        padding: 16px 35px;
+        font-size: 1.1rem;
     }
 
-    .detail-card,
-    .next-steps,
-    .resources-section {
-        padding: 25px 20px;
-    }
-
-    .resources-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .confirmation-actions {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .primary-button,
-    .secondary-button {
-        width: 100%;
-        max-width: 300px;
+    .update-button {
+        padding: 12px 25px;
+        font-size: 1rem;
     }
 }

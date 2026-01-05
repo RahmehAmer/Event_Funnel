@@ -1,5 +1,49 @@
+// Countdown timer function
+function startCountdown() {
+    // Set the date we're counting down to (January 20, 2026)
+    const countDownDate = new Date("January 20, 2026 17:00:00").getTime();
+
+    // Update the count down every 1 second
+    const countdownFunction = setInterval(function() {
+        // Get today's date and time
+        const now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        const distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the result in the elements
+        const dayElements = document.querySelectorAll('.counter-number');
+        const hourElements = document.querySelectorAll('.counter-number');
+        const minuteElements = document.querySelectorAll('.counter-number');
+        const secondElements = document.querySelectorAll('.counter-number');
+
+        if (dayElements.length >= 1) dayElements[0].innerHTML = days;
+        if (hourElements.length >= 2) hourElements[1].innerHTML = hours;
+        if (minuteElements.length >= 3) minuteElements[2].innerHTML = minutes;
+        if (secondElements.length >= 4) secondElements[3].innerHTML = seconds;
+
+        // If the count down is finished, write some text
+        if (distance < 0) {
+            clearInterval(countdownFunction);
+            document.querySelector('.counter-section').innerHTML = "<p style='text-align: center; font-size: 1.5rem; color: #333;'>Workshop has started!</p>";
+        }
+    }, 1000);
+}
+
 // Page navigation system
 document.addEventListener('DOMContentLoaded', () => {
+    // Check if we're on the details page and start countdown automatically
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    if (currentPath === 'middleFirst.html') {
+        startCountdown();
+    }
+
     // Function to navigate between pages
     window.navigateToPage = function(pageId) {
         // Map page IDs to their respective HTML files
@@ -110,41 +154,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2000); // 2 second delay to show loading effect
     };
 
-    // Countdown timer function
-    function startCountdown() {
-        // Set the date we're counting down to (January 20, 2026)
-        const countDownDate = new Date("January 20, 2026 17:00:00").getTime();
+    // Confirmation page functions
+    window.shareWorkshop = function() {
+        const shareUrl = window.location.origin + '/index.html';
+        const shareText = 'Check out this amazing Personal Branding Workshop! Build Your Personal Brand from ZERO in 5 Hours. ' + shareUrl;
 
-        // Update the count down every 1 second
-        const countdownFunction = setInterval(function() {
-            // Get today's date and time
-            const now = new Date().getTime();
+        if (navigator.share) {
+            navigator.share({
+                title: 'Personal Branding Workshop',
+                text: shareText,
+                url: shareUrl
+            });
+        } else {
+            // Fallback for browsers that don't support Web Share API
+            navigator.clipboard.writeText(shareText).then(() => {
+                alert('Workshop link copied to clipboard! Share it with your friends.');
+            }).catch(() => {
+                alert('Share this workshop: ' + shareText);
+            });
+        }
+    };
 
-            // Find the distance between now and the count down date
-            const distance = countDownDate - now;
+    window.checkEmail = function() {
+        alert('Please check your email for the workshop confirmation and Zoom link. If you don\'t see it in your inbox, please check your spam folder.');
+    };
 
-            // Time calculations for days, hours, minutes and seconds
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            // Display the result in the elements
-            const dayElements = document.querySelectorAll('.counter-number');
-            const hourElements = document.querySelectorAll('.counter-number');
-            const minuteElements = document.querySelectorAll('.counter-number');
-            const secondElements = document.querySelectorAll('.counter-number');
-
-            if (dayElements.length >= 1) dayElements[0].innerHTML = days;
-            if (hourElements.length >= 2) hourElements[1].innerHTML = hours;
-            if (minuteElements.length >= 3) minuteElements[2].innerHTML = minutes;
-            if (secondElements.length >= 4) secondElements[3].innerHTML = seconds;
-
-            // If the count down is finished, write some text
-            if (distance < 0) {
-                clearInterval(countdownFunction);
-                document.querySelector('.counter-section').innerHTML = "<p style='text-align: center; font-size: 1.5rem; color: #333;'>Workshop has started!</p>";
-            }
-        }, 1000);
-    }
+    window.keepUpdated = function() {
+        alert('Thank you! You\'ll now receive updates about upcoming workshops and personal branding tips.');
+    };
 });

@@ -23,91 +23,27 @@
                         <li><a href="#" class="nav-link">Blog</a></li>
                     </ul>
                 </nav>
-                <div class="register-section">
-                    <button class="register-button" onclick="navigateToPage('awareness')">Register now</button>
-                </div>
             </div>
         </header>
 
         <main class="main-content">
             <section class="confirmation-hero">
                 <div class="confirmation-container">
-                    <div class="success-icon">
-                        <span class="checkmark-icon">✓</span>
-                    </div>
+                    <h2 class="confirmation-thank-you">Thank you for registering!</h2>
 
-                    <h1 class="confirmation-title">Registration Confirmed!</h1>
-                    <h2 class="confirmation-subtitle">Welcome to the Personal Branding Workshop</h2>
-
-                    <div class="confirmation-details">
-                        <div class="detail-card">
-                            <h3 class="detail-title">Workshop Details</h3>
-                            <div class="detail-item">
-                                <span class="detail-label">Date:</span>
-                                <span class="detail-value">January 20, 2026</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-label">Time:</span>
-                                <span class="detail-value">5:00 PM - 10:00 PM</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-label">Platform:</span>
-                                <span class="detail-value">Zoom (Link sent via email)</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-label">Duration:</span>
-                                <span class="detail-value">5 hours</span>
-                            </div>
-                        </div>
-
-                        <div class="next-steps">
-                            <h3 class="steps-title">What's Next?</h3>
-                            <div class="step-list">
-                                <div class="step">
-                                    <span class="step-number">1</span>
-                                    <span>Check your email for confirmation and Zoom link</span>
-                                </div>
-                                <div class="step">
-                                    <span class="step-number">2</span>
-                                    <span>Join our exclusive alumni community</span>
-                                </div>
-                                <div class="step">
-                                    <span class="step-number">3</span>
-                                    <span>Prepare questions for the live Q&A session</span>
-                                </div>
-                                <div class="step">
-                                    <span class="step-number">4</span>
-                                    <span>Get ready to transform your personal brand!</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="resources-section">
-                            <h3 class="resources-title">Resources You'll Receive</h3>
-                            <div class="resources-grid">
-                                <div class="resource-item">
-                                    <span class="resource-icon">📹</span>
-                                    <span>Lifetime access to recordings</span>
-                                </div>
-                                <div class="resource-item">
-                                    <span class="resource-icon">📄</span>
-                                    <span>Workshop templates & checklists</span>
-                                </div>
-                                <div class="resource-item">
-                                    <span class="resource-icon">🎓</span>
-                                    <span>Certificate of completion</span>
-                                </div>
-                                <div class="resource-item">
-                                    <span class="resource-icon">👥</span>
-                                    <span>Exclusive alumni community access</span>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="confirmation-message">
+                        <h2 class="confirmation-success">
+                            you have successfully secured your spot in Build Your Personal Brand from ZERO Workshop
+                            <button class="share-button" onclick="shareWorkshop()">Share the workshop with your friends</button>
+                        </h2>
                     </div>
 
                     <div class="confirmation-actions">
-                        <button class="primary-button" onclick="navigateToPage('awareness')">Back to Home</button>
-                        <button class="secondary-button" onclick="window.print()">Download Confirmation</button>
+                        <button class="email-check-button" onclick="checkEmail()">Check your email for the confirmation</button>
+                    </div>
+
+                    <div class="update-section">
+                        <button class="update-button" onclick="keepUpdated()" title="Click here to keep you updated on upcoming workshops">Keep me updated</button>
                     </div>
                 </div>
             </section>
