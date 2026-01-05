@@ -18,20 +18,11 @@
                 </div>
                 <nav class="main-navigation">
                     <ul class="nav-list">
-                        <li><a href="#" class="nav-link">Workshops</a></li>
-                        <li><a href="#" class="nav-link">Teachers</a></li>
-                        <li><a href="#" class="nav-link">Blog</a></li>
+                        <li><a href="#" onclick="navigateToPage('awareness')" class="nav-link">Workshops</a></li>
+                        <li><a href="#" onclick="navigateToPage('faq', 'teacher-faq')" class="nav-link">Teachers</a></li>
+                        <li><a href="#" onclick="navigateToPage('faq', 'reviews-section')" class="nav-link">Blog</a></li>
                     </ul>
                 </nav>
-                <div class="breadcrumb-section">
-                    <nav class="breadcrumb">
-                        <a href="#" onclick="navigateToPage('awareness')" class="breadcrumb-link">Home</a>
-                        <span class="breadcrumb-separator">></span>
-                        <a href="#" onclick="navigateToPage('details')" class="breadcrumb-link">Workshop details</a>
-                        <span class="breadcrumb-separator">></span>
-                        <span class="breadcrumb-current">Registration</span>
-                    </nav>
-                </div>
             </div>
         </header>
 
@@ -82,8 +73,8 @@
         <footer class="site-footer">
             <div class="footer-container">
                 <img src="assets/Logo.jpg" alt="Logo" class="footer-logo">
-                <a href="#" class="footer-link">Workshops</a>
-                <a href="#" class="footer-link">Blog</a>
+                <a href="#" onclick="navigateToPage('awareness')" class="footer-link">Workshops</a>
+                <a href="#" onclick="navigateToPage('faq', 'reviews-section')" class="footer-link">Blog</a>
                 <span class="footer-text">All rights reserved</span>
             </div>
         </footer>

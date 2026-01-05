@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Function to navigate between pages
-    window.navigateToPage = function(pageId) {
+    window.navigateToPage = function(pageId, sectionId = null) {
         // Map page IDs to their respective HTML files
         const pageMap = {
             'awareness': 'index.html',
@@ -60,7 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (pageMap[pageId] && pageMap[pageId] !== currentPage) {
             // Navigate to different HTML file
-            window.location.href = pageMap[pageId];
+            const url = sectionId ? `${pageMap[pageId]}#${sectionId}` : pageMap[pageId];
+            window.location.href = url;
         } else {
             // Navigate within same HTML file (fallback for single-page navigation)
             // Hide all pages
@@ -77,13 +78,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (pageId === 'details') {
                     startCountdown();
                 }
+
+                // Scroll to section if specified
+                if (sectionId) {
+                    setTimeout(() => {
+                        const section = document.getElementById(sectionId);
+                        if (section) {
+                            section.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }, 100);
+                }
             }
 
-            // Smooth scroll to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            // Smooth scroll to top if no section specified
+            if (!sectionId) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
         }
 
-        console.log('Navigate to:', pageId);
+        console.log('Navigate to:', pageId, sectionId ? `section: ${sectionId}` : '');
     };
 
     // FAQ toggle function

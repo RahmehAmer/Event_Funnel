@@ -802,37 +802,34 @@ body {
     font-size: 1.8rem;
     color: #000000;
     font-weight: 500;
-    line-height: 1.4;
+    line-height: 1;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+.confirmation-email-note {
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+    line-height: 4;
+}
+
+
+.confirmation-actions {
     display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: center;
+    margin-top: 0.1px;
 }
 
+.email-check-button,
 .share-button {
-    background-color: #00d4aa;
-    color: #ffffff;
-    border: none;
-    padding: 12px 24px;
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 212, 170, 0.3);
-}
-
-.share-button:hover {
-    background-color: #00b894;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 212, 170, 0.4);
-}
-
-.email-check-button {
-    background-color: #00d4aa;
-    color: #ffffff;
-    border: none;
     padding: 18px 40px;
     font-size: 1.2rem;
     font-weight: 600;
@@ -840,37 +837,35 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 212, 170, 0.3);
-    margin: 20px auto;
-    display: block;
+    border: none;
+}
+
+.email-check-button {
+    background-color: #00d4aa;
+    color: #ffffff;
+}
+
+.share-button {
+    background-color: #f8f9fa;
+    color: #333;
+    border: 2px solid #e1e8ed;
 }
 
 .email-check-button:hover {
     background-color: #00b894;
+}
+
+.email-check-button:hover,
+.share-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(0, 212, 170, 0.4);
 }
 
-.update-section {
-    margin-top: 20px;
-}
-
-.update-button {
-    background-color: #f8f9fa;
-    color: #666;
-    border: 2px solid #e1e8ed;
-    padding: 15px 30px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.update-button:hover {
+.share-button:hover {
     background-color: #e1e8ed;
     border-color: #ccc;
-    transform: translateY(-1px);
 }
+
 
 .success-icon {
     margin-bottom: 30px;
@@ -1022,50 +1017,6 @@ body {
     font-size: 1.5rem;
 }
 
-.confirmation-actions {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.primary-button,
-.secondary-button {
-    padding: 15px 30px;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
-    text-align: center;
-}
-
-.primary-button {
-    background-color: #00d4aa;
-    color: #ffffff;
-    border: none;
-    box-shadow: 0 4px 15px rgba(0, 212, 170, 0.3);
-}
-
-.primary-button:hover {
-    background-color: #00b894;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 212, 170, 0.4);
-}
-
-.secondary-button {
-    background-color: #ffffff;
-    color: #666;
-    border: 2px solid #e1e8ed;
-}
-
-.secondary-button:hover {
-    background-color: #f8f9fa;
-    border-color: #ccc;
-    transform: translateY(-2px);
-}
 
 .learning-image {
     flex: 1;
@@ -1078,7 +1029,6 @@ body {
     width: 100%;
     max-width: 400px;
     height: auto;
-    border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
     mix-blend-mode: multiply;
@@ -1587,21 +1537,36 @@ body {
 
     .confirmation-success {
         font-size: 1.4rem;
-        gap: 25px;
+        gap: 40px;
     }
 
+    .confirmation-email-note {
+        font-size: 1rem;
+    }
+
+    .confirmation-actions {
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    .email-check-button,
     .share-button {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-    }
-
-    .email-check-button {
         padding: 16px 35px;
         font-size: 1.1rem;
     }
 
-    .update-button {
-        padding: 12px 25px;
-        font-size: 1rem;
+    .confirmation-actions {
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    .email-check-button,
+    .share-button {
+        padding: 16px 35px;
+        font-size: 1.1rem;
+    }
+
+    .confirmation-email-note {
+        font-size: 0.95rem;
     }
 }

@@ -19,8 +19,8 @@
                 <nav class="main-navigation">
                     <ul class="nav-list">
                         <li><a href="#" class="nav-link">Workshops</a></li>
-                        <li><a href="#" class="nav-link">Teachers</a></li>
-                        <li><a href="#" class="nav-link">Blog</a></li>
+                        <li><a href="#" onclick="navigateToPage('faq', 'teacher-faq')" class="nav-link">Teachers</a></li>
+                        <li><a href="#" onclick="navigateToPage('faq', 'reviews-section')" class="nav-link">Blog</a></li>
                     </ul>
                 </nav>
             </div>
@@ -33,17 +33,16 @@
 
                     <div class="confirmation-message">
                         <h2 class="confirmation-success">
-                            you have successfully secured your spot in Build Your Personal Brand from ZERO Workshop
-                            <button class="share-button" onclick="shareWorkshop()">Share the workshop with your friends</button>
+                            you have successfully secured your spot in Build Your Personal Brand Workshop
                         </h2>
+                        <p class="confirmation-email-note">
+                            You'll receive an email with the workshop details, Zoom link, and payment instructions shortly
+                        </p>
                     </div>
 
                     <div class="confirmation-actions">
                         <button class="email-check-button" onclick="checkEmail()">Check your email for the confirmation</button>
-                    </div>
-
-                    <div class="update-section">
-                        <button class="update-button" onclick="keepUpdated()" title="Click here to keep you updated on upcoming workshops">Keep me updated</button>
+                        <button class="share-button" onclick="shareWorkshop()">Share the workshop with your friends</button>
                     </div>
                 </div>
             </section>
@@ -52,8 +51,8 @@
         <footer class="site-footer">
             <div class="footer-container">
                 <img src="assets/Logo.jpg" alt="Logo" class="footer-logo">
-                <a href="#" class="footer-link">Workshops</a>
-                <a href="#" class="footer-link">Blog</a>
+                <a href="#" onclick="navigateToPage('awareness')" class="footer-link">Workshops</a>
+                <a href="#" onclick="navigateToPage('faq', 'reviews-section')" class="footer-link">Blog</a>
                 <span class="footer-text">All rights reserved</span>
             </div>
         </footer>
