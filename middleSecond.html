@@ -18,14 +18,11 @@
                 </div>
                 <nav class="main-navigation">
                     <ul class="nav-list">
-                        <li><a href="#" class="nav-link">Workshops</a></li>
-                        <li><a href="#" class="nav-link">Teachers</a></li>
-                        <li><a href="#" class="nav-link">Blog</a></li>
+                        <li><a href="#" onclick="navigateToPage('awareness')" class="nav-link">Workshops</a></li>
+                        <li><a href="#teacher-faq" class="nav-link">Teachers</a></li>
+                        <li><a href="#reviews-section" class="nav-link">Blog</a></li>
                     </ul>
                 </nav>
-                <div class="register-section">
-                    <button class="register-button" onclick="navigateToPage('awareness')">Register now</button>
-                </div>
             </div>
         </header>
 
@@ -65,11 +62,21 @@
                                 <p>You'll receive lifetime access to the workshop recordings, downloadable resources, templates, checklists, and a certificate of completion. Plus, you'll be part of our exclusive alumni community.</p>
                             </div>
                         </div>
+
+                        <div class="faq-card" id="teacher-faq">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span class="question-text">Who is the workshop instructor?</span>
+                                <span class="toggle-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Our workshop is led by Sarah Johnson, a renowned personal branding expert with over 10 years of experience in digital marketing and personal development. Sarah has helped thousands of professionals transform their careers through strategic personal branding. She holds a Master's degree in Marketing and has been featured in Forbes, Entrepreneur, and TEDx talks.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <section class="reviews-section">
+            <section id="reviews-section" class="reviews-section">
                 <div class="reviews-container">
                     <h2 class="reviews-title">Reviews</h2>
                     <div class="reviews-grid">
@@ -129,12 +136,22 @@
         <footer class="site-footer">
             <div class="footer-container">
                 <img src="assets/Logo.jpg" alt="Logo" class="footer-logo">
-                <a href="#" class="footer-link">Workshops</a>
-                <a href="#" class="footer-link">Blog</a>
+                <a href="#" onclick="navigateToPage('awareness')" class="footer-link">Workshops</a>
+                <a href="#reviews-section" class="footer-link">Blog</a>
                 <span class="footer-text">All rights reserved</span>
             </div>
         </footer>
     </section>
+
+    <!-- Scroll Arrows -->
+    <div class="scroll-arrows">
+        <button class="scroll-arrow scroll-to-top" onclick="scrollToTop()" title="Scroll to top">
+            ↑
+        </button>
+        <button class="scroll-arrow scroll-to-bottom" onclick="scrollToBottom()" title="Scroll to bottom">
+            ↓
+        </button>
+    </div>
 
     <script src="script.js"></script>
 </body>
